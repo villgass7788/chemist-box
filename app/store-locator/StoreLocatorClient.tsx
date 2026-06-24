@@ -412,7 +412,7 @@ export default function StoreLocatorClient() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.22, delay: 0.3 }}
-              className="card"
+              className="card opening-soon-card-mobile"
               style={{
                 background: '#09112B',
                 borderRadius: 'var(--radius-xl)',
@@ -420,22 +420,20 @@ export default function StoreLocatorClient() {
                 overflow: 'hidden',
                 color: 'white',
                 boxShadow: 'var(--shadow-md)',
-                display: 'flex',
-                flexDirection: 'row',
                 position: 'relative',
                 height: '100%'
               }}
             >
               {/* Text Area (Left) */}
-              <div style={{ 
-                  flex: '1 1 40%', 
+              <div 
+                className="opening-soon-text-mobile"
+                style={{ 
                   padding: '30px 20px 30px 30px', 
                   display: 'flex', 
                   flexDirection: 'column', 
                   justifyContent: 'center',
                   alignItems: 'flex-start', 
-                  textAlign: 'left',
-                  zIndex: 2
+                  textAlign: 'left'
               }}>
                 <div style={{ marginBottom: '16px', background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '50%', display: 'inline-flex' }}>
                   <Building size={24} style={{ color: 'white' }} />
@@ -478,17 +476,14 @@ export default function StoreLocatorClient() {
               </div>
 
               {/* Image Area (Right) */}
-              <div style={{ 
-                  flex: '0 0 60%', 
-                  position: 'relative'
-              }}>
+              <div className="opening-soon-img-mobile">
                 <img 
                   src="/assets/storefront.png" 
                   alt="Store opening soon" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center' }} 
                 />
                 {/* Smooth Fade Mask from Left (Navy) to Right (Transparent) */}
-                <div style={{ 
+                <div className="fade-mask" style={{ 
                   position: 'absolute', 
                   top: 0, left: 0, right: 0, bottom: 0, 
                   background: 'linear-gradient(to right, #09112B 0%, #09112B 15%, rgba(9, 17, 43, 0.8) 40%, rgba(9, 17, 43, 0.3) 70%, transparent 100%)' 
