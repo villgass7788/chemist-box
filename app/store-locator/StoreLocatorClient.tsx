@@ -428,7 +428,7 @@ export default function StoreLocatorClient() {
             >
               {/* Text Area (Left) */}
               <div style={{ 
-                  flex: '1 1 55%', 
+                  flex: '1 1 40%', 
                   padding: '30px 20px 30px 30px', 
                   display: 'flex', 
                   flexDirection: 'column', 
@@ -479,7 +479,7 @@ export default function StoreLocatorClient() {
 
               {/* Image Area (Right) */}
               <div style={{ 
-                  flex: '0 0 45%', 
+                  flex: '0 0 60%', 
                   position: 'relative'
               }}>
                 <img 
@@ -487,11 +487,11 @@ export default function StoreLocatorClient() {
                   alt="Store opening soon" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center' }} 
                 />
-                {/* Fade Mask from Left (Navy) to Right (Transparent) */}
+                {/* Smooth Fade Mask from Left (Navy) to Right (Transparent) */}
                 <div style={{ 
                   position: 'absolute', 
                   top: 0, left: 0, right: 0, bottom: 0, 
-                  background: 'linear-gradient(to right, #09112B 0%, rgba(9, 17, 43, 0.4) 50%, transparent 100%)' 
+                  background: 'linear-gradient(to right, #09112B 0%, #09112B 15%, rgba(9, 17, 43, 0.8) 40%, rgba(9, 17, 43, 0.3) 70%, transparent 100%)' 
                 }} />
               </div>
             </motion.div>
