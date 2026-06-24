@@ -1,0 +1,190 @@
+.page {
+  padding-top: 80px;
+  background: var(--bg-primary);
+  min-height: 100vh;
+}
+
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 0 60px;
+  background: var(--surface-light);
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.heroTitle {
+  font-family: var(--font-primary);
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 24px;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.heroDesc {
+  font-family: var(--font-secondary);
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 32px;
+}
+
+.benefitsSection {
+  padding: 80px 0;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin-top: 48px;
+}
+
+.benefitCard {
+  background: var(--white);
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  padding: 40px 32px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.benefitCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(30, 194, 180, 0.3);
+}
+
+.iconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: 16px;
+  background: rgba(30, 194, 180, 0.1);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  transition: all 0.3s;
+}
+
+.benefitCard:hover .iconWrap {
+  background: var(--teal);
+  color: var(--white);
+  transform: scale(1.05);
+}
+
+.benefitCard h3 {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.benefitCard p {
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.processSection {
+  padding: 0 0 80px;
+}
+
+.processBox {
+  background: var(--navy);
+  border-radius: 24px;
+  padding: 60px 40px;
+}
+
+.steps {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-top: 48px;
+  position: relative;
+}
+
+.step {
+  flex: 1;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  padding: 0 20px;
+}
+
+.stepNum {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--teal);
+  color: var(--white);
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 24px;
+  border: 4px solid var(--navy);
+}
+
+.step h4 {
+  color: var(--white);
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.step p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+.stepLine {
+  flex: 1;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  margin-top: 24px;
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 900px) {
+  .steps {
+    flex-direction: column;
+    align-items: center;
+  }
+  .stepLine {
+    width: 2px;
+    height: 40px;
+    margin: 10px 0;
+  }
+  .step {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroTitle {
+    font-size: 2.5rem;
+  }
+  .hero {
+    padding: 60px 0 40px;
+  }
+}

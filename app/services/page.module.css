@@ -1,0 +1,1243 @@
+.page {
+  padding-top: 0;
+  background: var(--white);
+  min-height: 100vh;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 120px 0 100px;
+  background: linear-gradient(135deg, #141D42 0%, #1E2A5E 60%, #2c3e7a 100%);
+  color: white;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroGlow {
+  position: absolute;
+  top: -20%;
+  right: -10%;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46, 196, 182, 0.12) 0%, transparent 65%);
+  filter: blur(50px);
+}
+
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.heroEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(46, 196, 182, 0.2);
+  border: 1px solid rgba(46, 196, 182, 0.3);
+  border-radius: 9999px;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 24px;
+}
+
+.heroTitle {
+  font-family: var(--font-primary);
+  font-size: clamp(2.5rem, 5vw, 3.75rem);
+  font-weight: 800;
+  line-height: 1.15;
+  color: white;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+.heroTitle span {
+  color: var(--teal);
+}
+
+.heroDesc {
+  font-family: var(--font-secondary);
+  font-size: 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.75;
+  max-width: 580px;
+  margin-bottom: 36px;
+}
+
+.heroVisual {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 55%;
+  z-index: 1;
+  pointer-events: none;
+  animation: fadeInRight 0.8s 0.2s ease both;
+  
+  /* Gradual alpha mask to fade out the left of the image */
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1) 80%);
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.05) 5%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1) 80%);
+}
+
+.heroFadeMask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #1E2A5E 0%, rgba(30, 42, 94, 0.8) 15%, rgba(30, 42, 94, 0.3) 40%, rgba(30, 42, 94, 0) 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+.heroVisualSpacer {
+  width: 100%;
+}
+
+/* Services Split Sections */
+.servicesSection {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.sectionHeader {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 80px;
+}
+
+.sectionHeader h2 {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+}
+
+.sectionHeader p {
+  color: var(--text-muted);
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.serviceRows {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.serviceRowReverse .serviceImgWrap {
+  order: 2;
+}
+
+.serviceImgWrap {
+  position: relative;
+  aspect-ratio: 4/3;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--border);
+}
+
+.serviceImgWrap img {
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.serviceRow:hover .serviceImgWrap img {
+  transform: scale(1.04);
+}
+
+.serviceText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.serviceNum {
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: var(--teal);
+  margin-bottom: 16px;
+  letter-spacing: 0.05em;
+}
+
+.serviceText h3 {
+  font-family: var(--font-primary);
+  font-size: 2rem;
+  color: var(--navy-dark);
+  margin-bottom: 20px;
+  letter-spacing: -0.015em;
+}
+
+.serviceText p {
+  font-family: var(--font-secondary);
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+}
+
+.serviceFeatures {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.serviceFeature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.serviceFeatureIcon {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: rgba(46, 196, 182, 0.1);
+  color: var(--teal);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Products Section (Tabbed Category Switcher) */
+.productsSection {
+  padding: 120px 0;
+  background: linear-gradient(160deg, #0f1628 0%, #141D42 40%, #1a2450 100%);
+  border-top: none;
+  border-bottom: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.productsSection::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,196,182,0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.productsSection .sectionHeader h2 {
+  color: var(--white);
+}
+
+.productsSection .sectionHeader p {
+  color: rgba(255,255,255,0.6);
+}
+
+.productsSection .sectionHeader .eyebrow {
+  color: var(--teal);
+}
+
+/* ─── Product Explorer ─── */
+.productExplorer {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 24px;
+  align-items: start;
+  margin-top: 60px;
+}
+
+/* ── Tabs Sidebar ── */
+.tabsList {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  background: rgba(255,255,255,0.05);
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 100px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tabBtn {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  text-align: left;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  transition: background 0.22s ease, color 0.22s ease, box-shadow 0.22s ease;
+  background: transparent;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+}
+
+.tabBtn:hover:not(.tabBtnActive) {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.9);
+}
+
+.tabBtnActive {
+  background: rgba(46,196,182,0.15);
+  color: var(--teal);
+  border: 1px solid rgba(46,196,182,0.3);
+  box-shadow: 0 4px 16px rgba(46,196,182,0.1);
+}
+
+/* Icon — bigger, fills container properly */
+.tabIconWrap {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  position: relative;
+  flex-shrink: 0;
+  overflow: hidden;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: background 0.22s ease;
+}
+
+.tabBtn:hover:not(.tabBtnActive) .tabIconWrap {
+  background: rgba(255,255,255,0.12);
+}
+
+.tabBtnActive .tabIconWrap {
+  background: rgba(46,196,182,0.2);
+  border-color: rgba(46,196,182,0.3);
+}
+
+/* Applied directly on the <img> inside the tab */
+.tabIcon {
+  opacity: 0.6;
+  transition: opacity 0.22s ease;
+}
+
+.tabIconActive {
+  opacity: 1;
+  transition: opacity 0.22s ease;
+}
+
+.tabLabel {
+  line-height: 1.25;
+}
+
+/* ── Panel Container ── */
+.panelContainer {
+  position: relative;
+  min-height: 520px;
+}
+
+/* Panel card */
+.activeTabPanel {
+  background: var(--white);
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.3);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  min-height: 520px;
+  position: relative;
+}
+
+.mobileCloseBtn {
+  display: none;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  color: var(--navy-dark);
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: all 0.2s ease;
+}
+
+.mobileCloseBtn:hover {
+  background: white;
+  transform: scale(1.05);
+}
+
+/* ── Left image column ── */
+.panelImgColumn {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  min-height: 100%;
+}
+
+/* Fade mask */
+.panelImgMask {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    transparent 45%,
+    rgba(255,255,255,0.7) 75%,
+    var(--white) 100%
+  );
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Feature badges */
+.panelFeatureOverlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 2;
+  background: linear-gradient(
+    to top,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.6) 60%,
+    transparent 100%
+  );
+}
+
+.featurePill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 13px;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  width: fit-content;
+  box-shadow: 0 4px 12px rgba(30,42,94,0.08);
+}
+
+.featurePillDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+}
+
+/* ── Right content column ── */
+.panelRight {
+  padding: 48px 44px 48px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.panelCategoryTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(46, 196, 182, 0.12);
+  border: 1px solid rgba(46, 196, 182, 0.3);
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--teal);
+  margin-bottom: 16px;
+}
+
+.panelTitle {
+  font-family: var(--font-primary);
+  font-size: 2.125rem;
+  font-weight: 800;
+  color: var(--navy-dark);
+  margin-bottom: 16px;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.panelDesc {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 28px;
+  max-width: 520px;
+}
+
+.panelSegmentsTitle {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-light);
+  margin-bottom: 14px;
+}
+
+.segmentsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  width: 100%;
+}
+
+.segmentTag {
+  padding: 11px 14px;
+  background: #f4f6fb;
+  border-radius: 10px;
+  font-family: var(--font-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--navy-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.segmentTag:hover {
+  background: var(--white);
+  border-color: rgba(46,196,182,0.4);
+  transform: translateY(-2px);
+  color: var(--navy-dark);
+  box-shadow: 0 4px 12px rgba(30,42,94,0.06);
+}
+
+.segmentTagDot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--teal);
+  flex-shrink: 0;
+  box-shadow: 0 0 4px rgba(46,196,182,0.5);
+}
+
+/* ══════════════════════════════════════════════
+   Trust Engine Section (Why Choose Chemist Box)
+   ══════════════════════════════════════════════ */
+
+.trustSection {
+  background: var(--white);
+}
+
+/* ─── ZONE 1: Stats Strip ─── */
+.marqueeBar {
+  position: relative;
+  background: var(--navy-dark);
+  padding: 22px 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.marqueeBar::before,
+.marqueeBar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.marqueeBar::before {
+  left: 0;
+  background: linear-gradient(to right, var(--navy-dark) 10%, transparent);
+}
+
+.marqueeBar::after {
+  right: 0;
+  background: linear-gradient(to left, var(--navy-dark) 10%, transparent);
+}
+
+.marqueeTrack {
+  display: flex;
+  gap: 0;
+  animation: marquee 32s linear infinite;
+  width: max-content;
+}
+
+.marqueeBar:hover .marqueeTrack {
+  animation-play-state: paused;
+}
+
+.metricChip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 48px;
+  flex-shrink: 0;
+}
+
+.metricDot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--teal);
+  box-shadow: 0 0 10px var(--teal);
+  flex-shrink: 0;
+}
+
+.metricNum {
+  font-family: var(--font-primary);
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+.metricLabel {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: var(--font-secondary);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ─── ZONE 2: Guarantee Bento Grid ─── */
+.guaranteeZone {
+  padding: 100px 0;
+  background: var(--offwhite);
+  border-top: 1px solid var(--border);
+}
+
+.guaranteeHeader {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 64px;
+}
+
+.guaranteeEyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(46,196,182,0.12);
+  border: 1px solid rgba(46,196,182,0.3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+}
+
+.guaranteeTitle {
+  font-family: var(--font-primary);
+  font-size: clamp(2rem, 3.5vw, 2.75rem);
+  font-weight: 800;
+  color: var(--navy-dark);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+.guaranteeTitle span {
+  color: var(--teal);
+}
+
+.guaranteeSubtitle {
+  font-size: 1.0625rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Bento collage — uneven rows */
+.guaranteeGrid {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto auto;
+  gap: 16px;
+}
+
+/* Card 1 — wide white: spans 5 cols, row 1 */
+.guaranteeCard:nth-child(1) { grid-column: span 5; }
+/* Card 2 — navy: spans 7 cols, row 1 */
+.guaranteeCard:nth-child(2) { grid-column: span 7; }
+/* Card 3 — teal: spans 4 cols, row 2 */
+.guaranteeCard:nth-child(3) { grid-column: span 4; }
+/* Card 4 — white: spans 4 cols, row 2 */
+.guaranteeCard:nth-child(4) { grid-column: span 4; }
+/* Card 5 — navy: spans 4 cols, row 2 */
+.guaranteeCard:nth-child(5) { grid-column: span 4; }
+/* Card 6 — wide teal: full width, row 3 */
+.guaranteeCard:nth-child(6) { grid-column: 1 / -1; }
+
+/* Card 6 special — horizontal layout */
+.guaranteeCard:nth-child(6) .guaranteeCardIcon {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  margin-bottom: 0;
+  margin-right: 28px;
+}
+
+.guaranteeCard:nth-child(6) {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+.guaranteeCard:nth-child(6) .guaranteeCardBody {
+  flex: 1;
+}
+
+.guaranteeCard:nth-child(6) .guaranteeCardTag {
+  margin-left: auto;
+  flex-shrink: 0;
+}
+
+/* Color themes */
+.guaranteeCard:nth-child(1),
+.guaranteeCard:nth-child(4) {
+  background: var(--white);
+  border: 1px solid var(--border);
+  color: var(--navy-dark);
+}
+
+.guaranteeCard:nth-child(2),
+.guaranteeCard:nth-child(5) {
+  background: var(--navy-dark);
+  border: 1px solid rgba(255,255,255,0.08);
+}
+.guaranteeCard:nth-child(2) .guaranteeCardTitle,
+.guaranteeCard:nth-child(5) .guaranteeCardTitle { color: var(--white); }
+.guaranteeCard:nth-child(2) .guaranteeCardDesc,
+.guaranteeCard:nth-child(5) .guaranteeCardDesc { color: rgba(255,255,255,0.6); }
+.guaranteeCard:nth-child(2) .guaranteeCardIcon,
+.guaranteeCard:nth-child(5) .guaranteeCardIcon {
+  background: rgba(46,196,182,0.15);
+  border-color: rgba(46,196,182,0.25);
+}
+.guaranteeCard:nth-child(2) .guaranteeCardTag,
+.guaranteeCard:nth-child(5) .guaranteeCardTag {
+  background: rgba(255,255,255,0.08);
+  color: rgba(255,255,255,0.7);
+}
+.guaranteeCard:nth-child(2)::before,
+.guaranteeCard:nth-child(5)::before { display: none; }
+
+.guaranteeCard:nth-child(3),
+.guaranteeCard:nth-child(6) {
+  background: #2ec4b6;
+  border: none;
+}
+.guaranteeCard:nth-child(3) .guaranteeCardTitle,
+.guaranteeCard:nth-child(6) .guaranteeCardTitle { color: var(--white); }
+.guaranteeCard:nth-child(3) .guaranteeCardDesc,
+.guaranteeCard:nth-child(6) .guaranteeCardDesc { color: rgba(255,255,255,0.75); }
+.guaranteeCard:nth-child(3) .guaranteeCardIcon,
+.guaranteeCard:nth-child(6) .guaranteeCardIcon {
+  background: rgba(255,255,255,0.2);
+  border-color: rgba(255,255,255,0.3);
+  color: var(--white);
+}
+.guaranteeCard:nth-child(3) .guaranteeCardTag,
+.guaranteeCard:nth-child(6) .guaranteeCardTag {
+  background: rgba(255,255,255,0.2);
+  color: var(--white);
+}
+.guaranteeCard:nth-child(3):hover,
+.guaranteeCard:nth-child(6):hover {
+  border-color: rgba(255,255,255,0.3);
+  box-shadow: 0 20px 40px rgba(46,196,182,0.35);
+}
+.guaranteeCard:nth-child(3)::before,
+.guaranteeCard:nth-child(6)::before { display: none; }
+
+.guaranteeCard {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  transition: all var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.guaranteeCardBody {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.guaranteeCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--teal), var(--accent));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.guaranteeCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: rgba(46,196,182,0.25);
+}
+
+.guaranteeCard:hover::before {
+  opacity: 1;
+}
+
+.guaranteeCardIcon {
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-lg);
+  background: rgba(46,196,182,0.1);
+  border: 1px solid rgba(46,196,182,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--teal);
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+
+.guaranteeCardTitle {
+  font-family: var(--font-primary);
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--navy-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.guaranteeCardDesc {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.guaranteeCardTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  background: rgba(30,42,94,0.06);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.04em;
+  align-self: flex-start;
+}
+
+/* ─── ZONE 3: Pharmacist Promise Banner ─── */
+.pharmacistBanner {
+  position: relative;
+  background: linear-gradient(135deg, #141D42 0%, #1E2A5E 55%, #1a3060 100%);
+  padding: 100px 0;
+  overflow: hidden;
+}
+
+.pharmacistBannerGlow1 {
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 480px;
+  height: 480px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(46,196,182,0.14) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.pharmacistBannerGlow2 {
+  position: absolute;
+  bottom: -100px;
+  right: -60px;
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74,144,217,0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.pharmacistBannerInner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.pharmacistBannerLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.pharmacistBannerEyebrow {
+  display: inline-flex;
+  padding: 6px 14px;
+  background: rgba(46,196,182,0.15);
+  border: 1px solid rgba(46,196,182,0.3);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+.pharmacistBannerTitle {
+  font-family: var(--font-primary);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.pharmacistBannerDesc {
+  font-size: 1.0625rem;
+  color: rgba(255,255,255,0.65);
+  line-height: 1.75;
+  margin-bottom: 32px;
+}
+
+.pharmacistBannerCreds {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.pharmacistBannerCred {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+
+.pharmacistBannerCred svg {
+  color: var(--teal);
+  flex-shrink: 0;
+}
+
+.pharmacistBannerRight {
+  display: flex;
+  align-items: stretch;
+}
+
+.pharmacistBannerActions {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-xl);
+  padding: 40px 36px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  width: 100%;
+}
+
+.pharmacistBannerAction {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.pharmacistBannerActionLabel {
+  font-family: var(--font-primary);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--teal);
+  margin: 0;
+}
+
+.pharmacistBannerActionTitle {
+  font-family: var(--font-primary);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--white);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.pharmacistBannerActionDesc {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.6;
+  margin: 0 0 4px;
+}
+
+.pharmacistBannerActionDivider {
+  height: 1px;
+  background: rgba(255,255,255,0.1);
+}
+
+/* ══ Responsives ══ */
+@media (max-width: 1024px) {
+  .heroInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+    justify-items: center;
+  }
+  .heroContent {
+    align-items: center;
+    z-index: 2;
+  }
+  .heroDesc {
+    max-width: 100%;
+  }
+  .heroVisual {
+    display: block;
+    width: 100%;
+    opacity: 0.45;
+    z-index: 0;
+  }
+  .heroVisualSpacer {
+    display: none;
+  }
+  .heroIllustration {
+    max-width: 480px;
+  }
+  .productExplorer {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .productExplorer:not(.mobileExpanded) .panelContainer {
+    display: none;
+  }
+  .productExplorer.mobileExpanded .tabsList {
+    display: none;
+  }
+  .mobileCloseBtn {
+    display: flex;
+  }
+  .tabsList {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 8px;
+    position: static;
+  }
+  .tabBtn {
+    width: 100%;
+    text-align: left;
+    flex: 0 1 auto;
+  }
+  .activeTabPanel {
+    grid-template-columns: 1fr;
+    min-height: auto;
+    text-align: center;
+  }
+  .panelImgColumn {
+    height: 280px;
+    min-height: 280px;
+  }
+  .panelImgMask {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 40%,
+      rgba(255,255,255,0.8) 75%,
+      var(--white) 100%
+    );
+  }
+  .panelFeatureOverlay {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 6px;
+  }
+  .panelRight {
+    padding: 32px 28px 36px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .segmentsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .guaranteeGrid {
+    grid-template-columns: repeat(6, 1fr);
+  }
+  .guaranteeCard:nth-child(1) { grid-column: span 3; }
+  .guaranteeCard:nth-child(2) { grid-column: span 3; }
+  .guaranteeCard:nth-child(3) { grid-column: span 2; }
+  .guaranteeCard:nth-child(4) { grid-column: span 2; }
+  .guaranteeCard:nth-child(5) { grid-column: span 2; }
+  .guaranteeCard:nth-child(6) { grid-column: 1 / -1; }
+  .pharmacistBannerInner {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    text-align: center;
+  }
+  .pharmacistBannerLeft {
+    align-items: flex-start;
+    text-align: left;
+  }
+  .pharmacistBannerEyebrow {
+    align-self: flex-start;
+  }
+  .pharmacistBannerCreds {
+    align-self: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    padding-left: 16px;
+  }
+  .pharmacistBannerCred {
+    justify-content: flex-start;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 100px 0 60px;
+  }
+  .heroTitle {
+    font-size: 2.75rem;
+  }
+  .serviceRow {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+  .serviceRowReverse .serviceImgWrap {
+    order: -1;
+  }
+  .serviceText {
+    align-items: center;
+  }
+  .serviceFeatures {
+    align-items: flex-start;
+    align-self: flex-start;
+    text-align: left;
+    width: 100%;
+    margin: 0;
+  }
+
+  .guaranteeGrid {
+    grid-template-columns: 1fr;
+  }
+  .guaranteeCard:nth-child(1),
+  .guaranteeCard:nth-child(2),
+  .guaranteeCard:nth-child(3),
+  .guaranteeCard:nth-child(4),
+  .guaranteeCard:nth-child(5),
+  .guaranteeCard:nth-child(6) {
+    grid-column: 1 / -1;
+  }
+  .guaranteeCard:nth-child(6) {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .guaranteeCard:nth-child(6) .guaranteeCardIcon {
+    margin-right: 0;
+    margin-bottom: 20px;
+    width: 52px;
+    height: 52px;
+  }
+  .guaranteeCard:nth-child(6) .guaranteeCardTag {
+    margin-left: 0;
+    align-self: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2.25rem;
+  }
+  .segmentsGrid {
+    grid-template-columns: 1fr;
+  }
+  .tabBtn span:not(.tabLabel) {
+    display: none; /* hide label on very small screens, keep icon */
+  }
+  .pharmacistBannerActions {
+    padding: 28px 24px;
+    text-align: center;
+  }
+}
+

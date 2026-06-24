@@ -1,0 +1,271 @@
+.footer {
+  background: var(--navy-dark);
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-secondary);
+}
+
+.top {
+  padding: 80px 0 60px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 48px;
+}
+
+/* Brand col */
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  margin-bottom: 4px;
+}
+
+.logoImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.brandDesc {
+  font-size: 0.875rem;
+  line-height: 1.7;
+  color: rgba(255,255,255,0.45);
+  max-width: 300px;
+}
+
+.socialRow {
+  display: flex;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.socialBtn {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.5);
+  transition: all 0.2s;
+}
+
+.socialBtn:hover {
+  background: rgba(255,255,255,0.14);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Col titles */
+.colTitle {
+  font-family: var(--font-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: white;
+  margin-bottom: 20px;
+}
+
+/* Link list */
+.linkList {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: rgba(255,255,255,0.45);
+  transition: color 0.2s, gap 0.2s;
+  text-decoration: none;
+}
+
+.footerLink svg {
+  opacity: 0;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  color: var(--teal);
+}
+
+.footerLink:hover {
+  color: white;
+  gap: 8px;
+}
+
+.footerLink:hover svg {
+  opacity: 1;
+}
+
+/* Serve text */
+.serveText {
+  font-size: 0.75rem;
+  color: var(--teal);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+}
+
+/* Testimonials */
+.testimonials {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.testimonial {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.04);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.stars {
+  font-size: 0.75rem;
+  color: var(--warning);
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+}
+
+.testimonialText {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.55);
+  line-height: 1.5;
+  margin-bottom: 6px;
+}
+
+.testimonialAuthor {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.3);
+  font-style: italic;
+}
+
+/* Find store button */
+.findStoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 20px;
+  background: var(--navy);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.15);
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.findStoreBtn:hover {
+  background: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+
+/* Bottom */
+.bottom {
+  padding: 20px 0;
+}
+
+.bottomInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.copyright {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+}
+
+.legalLinks {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.legalLink {
+  font-size: 0.8125rem;
+  color: rgba(255,255,255,0.3);
+  transition: color 0.2s;
+}
+
+.legalLink:hover {
+  color: rgba(255,255,255,0.7);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1.5fr 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  .brand {
+    grid-column: 1 / -1;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .brandDesc {
+    margin: 0 auto;
+  }
+
+  .socialRow {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    text-align: center;
+  }
+
+  .linkList {
+    align-items: center;
+  }
+
+  .testimonials {
+    align-items: center;
+  }
+
+  .bottomInner {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    text-align: center;
+  }
+
+  .legalLinks {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+}

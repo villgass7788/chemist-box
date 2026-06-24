@@ -1,0 +1,479 @@
+/* ======================================================
+   CHEMIST BOX — Global CSS Design System
+   Colors: #1E2A5E (Navy), #E7EFFA (Sky), #F2F4F7 (Off-White)
+   Fonts: Poppins (primary), Inter (secondary/body)
+   ====================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+
+/* ── CSS Variables ── */
+:root {
+  --navy: #1E2A5E;
+  --navy-light: #2C3E7A;
+  --navy-dark: #141D42;
+  --sky: #E7EFFA;
+  --sky-dark: #D0DFEF;
+  --offwhite: #F2F4F7;
+  --white: #FFFFFF;
+  --text: #1A1F36;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --accent: #4A90D9;
+  --accent-light: #6BAEE3;
+  --teal: #2EC4B6;
+  --teal-light: #4DCFC3;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --border: #E2E8F0;
+  --border-light: #F1F5F9;
+
+  --font-primary: var(--font-poppins), 'Poppins', sans-serif;
+  --font-secondary: var(--font-inter), 'Inter', sans-serif;
+
+  --radius-sm: 8px;
+  --radius: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 3px rgba(30, 42, 94, 0.06), 0 1px 2px rgba(30, 42, 94, 0.04);
+  --shadow: 0 4px 16px rgba(30, 42, 94, 0.1), 0 2px 6px rgba(30, 42, 94, 0.06);
+  --shadow-md: 0 8px 32px rgba(30, 42, 94, 0.12), 0 4px 12px rgba(30, 42, 94, 0.08);
+  --shadow-lg: 0 20px 60px rgba(30, 42, 94, 0.15), 0 8px 24px rgba(30, 42, 94, 0.1);
+  --shadow-xl: 0 40px 100px rgba(30, 42, 94, 0.2), 0 16px 40px rgba(30, 42, 94, 0.12);
+
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-secondary);
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--text);
+  background: var(--white);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.25rem, 2.5vw, 1.75rem); }
+h4 { font-size: 1.125rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+p {
+  color: var(--text-muted);
+  line-height: 1.75;
+}
+
+/* ── Container ── */
+.container {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ── Section ── */
+.section {
+  padding: 100px 0;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  transition: all var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  text-decoration: none;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0.1);
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn-primary {
+  background: var(--navy);
+  color: var(--white);
+  border-color: var(--navy);
+  box-shadow: 0 4px 20px rgba(30, 42, 94, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--navy-light);
+  border-color: var(--navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(30, 42, 94, 0.4);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.btn-outline:hover {
+  background: var(--navy);
+  color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-outline-white {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.4);
+}
+
+.btn-outline-white:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
+.btn-teal {
+  background: var(--teal);
+  color: var(--white);
+  border-color: var(--teal);
+  box-shadow: 0 4px 20px rgba(46,196,182,0.35);
+}
+
+.btn-teal:hover {
+  background: var(--teal-light);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(46,196,182,0.5);
+}
+
+.btn-lg {
+  padding: 16px 36px;
+  font-size: 1rem;
+}
+
+.btn-sm {
+  padding: 10px 20px;
+  font-size: 0.8125rem;
+}
+
+/* ── Tags / Pills ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.eyebrow-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 14px;
+  background: rgba(231, 239, 250, 0.8);
+  border: 1px solid rgba(30, 42, 94, 0.12);
+  border-radius: var(--radius-full);
+  font-family: var(--font-primary);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--navy);
+  margin-bottom: 20px;
+  backdrop-filter: blur(8px);
+}
+
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--sky);
+  color: var(--navy);
+}
+
+.divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(to right, var(--navy), var(--accent));
+  border-radius: 2px;
+  margin: 16px 0 24px;
+}
+
+.divider-center {
+  margin: 16px auto 24px;
+}
+
+/* ── Cards ── */
+.card {
+  background: var(--white);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: rgba(30,42,94,0.1);
+}
+
+/* ── Link Button ── */
+.link-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-primary);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--navy);
+  transition: gap var(--transition), color var(--transition);
+}
+
+.link-btn:hover {
+  gap: 10px;
+  color: var(--accent);
+}
+
+/* ── Animations ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes floatAlt {
+  0%, 100% { transform: translateY(0px) rotate(2deg); }
+  50% { transform: translateY(-8px) rotate(-2deg); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(30, 42, 94, 0.15); }
+  50% { box-shadow: 0 0 0 12px rgba(30, 42, 94, 0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ── Scroll animations (Intersection Observer classes) ── */
+.animate-on-scroll {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1), transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-right.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Stagger delays */
+.delay-1 { transition-delay: 0.1s !important; }
+.delay-2 { transition-delay: 0.2s !important; }
+.delay-3 { transition-delay: 0.3s !important; }
+.delay-4 { transition-delay: 0.4s !important; }
+.delay-5 { transition-delay: 0.5s !important; }
+.delay-6 { transition-delay: 0.6s !important; }
+.delay-7 { transition-delay: 0.7s !important; }
+.delay-8 { transition-delay: 0.8s !important; }
+
+/* ── Gradient Backgrounds ── */
+.bg-navy { background: var(--navy); }
+.bg-sky { background: var(--sky); }
+.bg-offwhite { background: var(--offwhite); }
+.bg-white { background: var(--white); }
+
+.gradient-navy {
+  background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 50%, var(--navy-light) 100%);
+}
+
+.gradient-sky {
+  background: linear-gradient(135deg, var(--sky) 0%, var(--offwhite) 100%);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--offwhite);
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(30, 42, 94, 0.2);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(30, 42, 94, 0.4);
+}
+
+/* ── Responsive ── */
+@media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  h1 { font-size: clamp(2rem, 8vw, 2.75rem); }
+  h2 { font-size: clamp(1.5rem, 6vw, 2rem); }
+}
