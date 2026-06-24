@@ -118,7 +118,7 @@ export default function AboutPage() {
         <div className="container">
           <div className={styles.storyHeader}>
             <div className="eyebrow" style={{ justifyContent: 'center' }}>Our Journey</div>
-            <h2>Growing Together with India</h2>
+            <h2>Growing Together<br />with India</h2>
             <div className="divider divider-center"/>
           </div>
           <Timeline milestones={milestones} />

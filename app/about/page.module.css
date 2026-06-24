@@ -384,7 +384,6 @@
 .timelineTitle {
   font-size: 2rem;
   color: var(--navy-dark);
-  white-space: nowrap;
 }
 
 .timelineContent p {
@@ -706,21 +705,53 @@
     align-items: center;
   }
   .timeline {
-    padding-left: 32px;
+    padding-left: 0;
   }
   .timelineTrack {
-    left: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
   }
   .timelineMarker {
-    left: -32px;
+    opacity: 0;
+    pointer-events: none;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -50%);
+    z-index: 3;
   }
   .timelineCard {
     flex-direction: column;
     min-height: auto;
-    text-align: center;
+    text-align: left;
+    width: 92%;
+    margin: 0 auto;
+    z-index: 2;
+    position: relative;
+    border: 2px solid transparent;
+    transition: all 0.5s ease;
+    overflow: hidden;
+  }
+  .activeCard {
+    border-color: var(--navy);
+    box-shadow: 0 0 24px rgba(30, 42, 94, 0.15);
+    transform: scale(1.02);
   }
   .timelineHeader {
-    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .timelineYear {
+    font-size: 2.25rem;
+  }
+  .timelineTitle {
+    font-size: 1.5rem;
+  }
+  .timelineContent {
+    background: var(--white);
+    padding: 32px 24px;
   }
   .timelineImageWrap {
     position: relative;
@@ -774,18 +805,11 @@
     width: 100%;
     height: 1px;
   }
-  .timeline {
-    padding-left: 24px;
-  }
-  .timelineTrack {
-    left: 8px;
-  }
   .timelineMarker {
-    left: -26px;
     width: 16px;
     height: 16px;
   }
   .timelineContent {
-    padding: 32px 20px;
+    padding: 28px 20px;
   }
 }

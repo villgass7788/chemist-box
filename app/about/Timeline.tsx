@@ -99,7 +99,7 @@ export default function Timeline({ milestones }: { milestones: Milestone[] }) {
                 </svg>
               )}
             </div>
-            <div className={styles.timelineCard}>
+            <div className={`${styles.timelineCard} ${isActive ? styles.activeCard : ''}`}>
               <div className={styles.timelineContent}>
                 <div className={styles.timelineHeader}>
                   <div className={styles.timelineYear}>{m.year}</div>
