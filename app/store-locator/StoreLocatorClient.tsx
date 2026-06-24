@@ -446,6 +446,7 @@ export default function StoreLocatorClient() {
                   We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
                 </p>
                 <button 
+                  className="opening-soon-btn-mobile"
                   style={{ 
                     padding: '10px 18px', 
                     borderRadius: 'var(--radius-full)', 

@@ -502,6 +502,10 @@ p {
   .opening-soon-text-mobile {
     flex: 1 1 100% !important;
     padding: 30px !important;
+    justify-content: flex-end !important;
+  }
+  .opening-soon-btn-mobile {
+    margin-top: 10px !important;
   }
   .opening-soon-img-mobile {
     position: absolute !important;
