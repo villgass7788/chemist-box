@@ -421,45 +421,47 @@ export default function StoreLocatorClient() {
                 color: 'white',
                 boxShadow: 'var(--shadow-md)',
                 display: 'flex',
-                flexDirection: 'column',
+                flexDirection: 'row',
                 position: 'relative',
-                minHeight: '420px'
+                height: '100%'
               }}
             >
-              {/* Text Area (Top) */}
+              {/* Text Area (Left) */}
               <div style={{ 
-                  padding: '36px 30px 20px', 
+                  flex: '1 1 55%', 
+                  padding: '30px 20px 30px 30px', 
                   display: 'flex', 
                   flexDirection: 'column', 
+                  justifyContent: 'center',
                   alignItems: 'flex-start', 
                   textAlign: 'left',
-                  zIndex: 2,
-                  flex: '1 0 auto'
+                  zIndex: 2
               }}>
-                <div style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.05)', padding: '14px', borderRadius: '50%', display: 'inline-flex' }}>
-                  <Building size={28} style={{ color: 'white' }} />
+                <div style={{ marginBottom: '16px', background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '50%', display: 'inline-flex' }}>
+                  <Building size={24} style={{ color: 'white' }} />
                 </div>
-                <h3 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '16px', color: 'white', lineHeight: 1.2 }}>
-                  More shops opening soon!
+                <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: 'white', lineHeight: 1.2 }}>
+                  More shops<br/>opening soon!
                 </h3>
-                <div style={{ width: '36px', height: '3px', background: '#3B82F6', marginBottom: '16px' }} />
-                <p style={{ fontSize: '0.95rem', opacity: 0.85, lineHeight: 1.6, marginBottom: '24px' }}>
+                <div style={{ width: '32px', height: '3px', background: '#3B82F6', marginBottom: '12px' }} />
+                <p style={{ fontSize: '0.85rem', opacity: 0.85, lineHeight: 1.5, marginBottom: '20px' }}>
                   We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
                 </p>
                 <button 
                   style={{ 
-                    padding: '12px 24px', 
+                    padding: '10px 18px', 
                     borderRadius: 'var(--radius-full)', 
                     background: 'transparent', 
                     color: 'white', 
                     border: '1px solid rgba(255,255,255,0.8)',
                     fontWeight: 600,
-                    fontSize: '0.9rem',
+                    fontSize: '0.8rem',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease',
                     display: 'flex',
                     alignItems: 'center',
-                    gap: '10px'
+                    gap: '8px',
+                    marginTop: 'auto'
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.background = 'white';
@@ -470,28 +472,26 @@ export default function StoreLocatorClient() {
                     e.currentTarget.style.color = 'white';
                   }}
                 >
-                  Suggest a Location
-                  <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>→</span>
+                  Suggest Location
+                  <span style={{ fontSize: '1.1rem', lineHeight: 1 }}>→</span>
                 </button>
               </div>
 
-              {/* Image Area (Bottom) */}
+              {/* Image Area (Right) */}
               <div style={{ 
-                  position: 'relative', 
-                  height: '220px', 
-                  width: '100%',
-                  marginTop: 'auto'
+                  flex: '0 0 45%', 
+                  position: 'relative'
               }}>
                 <img 
                   src="/assets/storefront.png" 
                   alt="Store opening soon" 
-                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'left center' }} 
                 />
-                {/* Higher Fade Mask */}
+                {/* Fade Mask from Left (Navy) to Right (Transparent) */}
                 <div style={{ 
                   position: 'absolute', 
                   top: 0, left: 0, right: 0, bottom: 0, 
-                  background: 'linear-gradient(to bottom, #09112B 0%, rgba(9, 17, 43, 0.6) 40%, transparent 100%)' 
+                  background: 'linear-gradient(to right, #09112B 0%, rgba(9, 17, 43, 0.4) 50%, transparent 100%)' 
                 }} />
               </div>
             </motion.div>
