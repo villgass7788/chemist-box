@@ -407,57 +407,93 @@ export default function StoreLocatorClient() {
 
             {/* "Opening Soon" Card */}
             <motion.div
+              key="opening-soon-card"
               layout
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.22, delay: 0.3 }}
               className="card"
               style={{
-                display: 'flex', flexDirection: 'column',
-                background: 'linear-gradient(135deg, #141D42 0%, #1E2A5E 100%)', 
+                background: '#09112B',
                 borderRadius: 'var(--radius-xl)',
-                border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden',
+                border: '1px solid rgba(255,255,255,0.05)', 
+                overflow: 'hidden',
                 color: 'white',
-                justifyContent: 'center',
-                alignItems: 'center',
-                textAlign: 'center',
-                padding: '40px 30px',
-                height: '100%',
-                boxShadow: 'var(--shadow-md)'
+                boxShadow: 'var(--shadow-md)',
+                display: 'flex',
+                flexDirection: 'column',
+                position: 'relative',
+                minHeight: '420px'
               }}
             >
-              <div style={{ marginBottom: '24px', background: 'rgba(255,255,255,0.1)', padding: '16px', borderRadius: '50%' }}>
-                <Building size={32} style={{ color: 'white' }} />
+              {/* Text Area (Top) */}
+              <div style={{ 
+                  padding: '36px 30px 20px', 
+                  display: 'flex', 
+                  flexDirection: 'column', 
+                  alignItems: 'flex-start', 
+                  textAlign: 'left',
+                  zIndex: 2,
+                  flex: '1 0 auto'
+              }}>
+                <div style={{ marginBottom: '20px', background: 'rgba(255,255,255,0.05)', padding: '14px', borderRadius: '50%', display: 'inline-flex' }}>
+                  <Building size={28} style={{ color: 'white' }} />
+                </div>
+                <h3 style={{ fontSize: '1.8rem', fontWeight: 700, marginBottom: '16px', color: 'white', lineHeight: 1.2 }}>
+                  More shops opening soon!
+                </h3>
+                <div style={{ width: '36px', height: '3px', background: '#3B82F6', marginBottom: '16px' }} />
+                <p style={{ fontSize: '0.95rem', opacity: 0.85, lineHeight: 1.6, marginBottom: '24px' }}>
+                  We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
+                </p>
+                <button 
+                  style={{ 
+                    padding: '12px 24px', 
+                    borderRadius: 'var(--radius-full)', 
+                    background: 'transparent', 
+                    color: 'white', 
+                    border: '1px solid rgba(255,255,255,0.8)',
+                    fontWeight: 600,
+                    fontSize: '0.9rem',
+                    cursor: 'pointer',
+                    transition: 'all 0.2s ease',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '10px'
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'white';
+                    e.currentTarget.style.color = '#09112B';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'transparent';
+                    e.currentTarget.style.color = 'white';
+                  }}
+                >
+                  Suggest a Location
+                  <span style={{ fontSize: '1.2rem', lineHeight: 1 }}>→</span>
+                </button>
               </div>
-              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: 'white' }}>
-                More shops opening soon!
-              </h3>
-              <p style={{ fontSize: '0.95rem', opacity: 0.8, lineHeight: 1.6, marginBottom: '28px', maxWidth: '300px' }}>
-                We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
-              </p>
-              <button 
-                style={{ 
-                  padding: '12px 24px', 
-                  borderRadius: 'var(--radius-full)', 
-                  background: 'transparent', 
-                  color: 'white', 
-                  border: '1px solid rgba(255,255,255,0.4)',
-                  fontWeight: 600,
-                  fontSize: '0.9rem',
-                  cursor: 'pointer',
-                  transition: 'all 0.2s ease'
-                }}
-                onMouseEnter={e => {
-                  e.currentTarget.style.background = 'white';
-                  e.currentTarget.style.color = '#141D42';
-                }}
-                onMouseLeave={e => {
-                  e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = 'white';
-                }}
-              >
-                Suggest a Location
-              </button>
+
+              {/* Image Area (Bottom) */}
+              <div style={{ 
+                  position: 'relative', 
+                  height: '220px', 
+                  width: '100%',
+                  marginTop: 'auto'
+              }}>
+                <img 
+                  src="/assets/storefront.png" 
+                  alt="Store opening soon" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center' }} 
+                />
+                {/* Higher Fade Mask */}
+                <div style={{ 
+                  position: 'absolute', 
+                  top: 0, left: 0, right: 0, bottom: 0, 
+                  background: 'linear-gradient(to bottom, #09112B 0%, rgba(9, 17, 43, 0.6) 40%, transparent 100%)' 
+                }} />
+              </div>
             </motion.div>
           </AnimatePresence>
         </div>
