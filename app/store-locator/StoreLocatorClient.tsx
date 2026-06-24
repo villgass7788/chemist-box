@@ -435,14 +435,14 @@ export default function StoreLocatorClient() {
                   alignItems: 'flex-start', 
                   textAlign: 'left'
               }}>
-                <div style={{ marginBottom: '16px', background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '50%', display: 'inline-flex' }}>
+                <div className="mobile-hide-icon" style={{ marginBottom: '16px', background: 'rgba(255,255,255,0.05)', padding: '12px', borderRadius: '50%', display: 'inline-flex' }}>
                   <Building size={24} style={{ color: 'white' }} />
                 </div>
                 <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: 'white', lineHeight: 1.2 }}>
                   More shops<br/>opening soon!
                 </h3>
                 <div style={{ width: '32px', height: '3px', background: '#3B82F6', marginBottom: '12px' }} />
-                <p style={{ fontSize: '0.85rem', opacity: 0.85, lineHeight: 1.5, marginBottom: '20px' }}>
+                <p style={{ fontSize: '0.85rem', color: 'white', lineHeight: 1.5, marginBottom: '20px' }}>
                   We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
                 </p>
                 <button 

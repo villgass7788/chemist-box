@@ -518,4 +518,7 @@ p {
   .opening-soon-img-mobile .fade-mask {
     display: none !important;
   }
+  .mobile-hide-icon {
+    display: none !important;
+  }
 }
