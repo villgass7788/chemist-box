@@ -404,6 +404,61 @@ export default function StoreLocatorClient() {
                 </div>
               </motion.div>
             ))}
+
+            {/* "Opening Soon" Card */}
+            <motion.div
+              layout
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.22, delay: 0.3 }}
+              className="card"
+              style={{
+                display: 'flex', flexDirection: 'column',
+                background: 'linear-gradient(135deg, #141D42 0%, #1E2A5E 100%)', 
+                borderRadius: 'var(--radius-xl)',
+                border: '1px solid rgba(255,255,255,0.1)', overflow: 'hidden',
+                color: 'white',
+                justifyContent: 'center',
+                alignItems: 'center',
+                textAlign: 'center',
+                padding: '40px 30px',
+                height: '100%',
+                boxShadow: 'var(--shadow-md)'
+              }}
+            >
+              <div style={{ marginBottom: '24px', background: 'rgba(255,255,255,0.1)', padding: '16px', borderRadius: '50%' }}>
+                <Building size={32} style={{ color: 'white' }} />
+              </div>
+              <h3 style={{ fontSize: '1.4rem', fontWeight: 700, marginBottom: '12px', color: 'white' }}>
+                More shops opening soon!
+              </h3>
+              <p style={{ fontSize: '0.95rem', opacity: 0.8, lineHeight: 1.6, marginBottom: '28px', maxWidth: '300px' }}>
+                We are expanding rapidly. Stay tuned for more Chemist Box pharmacies in your area.
+              </p>
+              <button 
+                style={{ 
+                  padding: '12px 24px', 
+                  borderRadius: 'var(--radius-full)', 
+                  background: 'transparent', 
+                  color: 'white', 
+                  border: '1px solid rgba(255,255,255,0.4)',
+                  fontWeight: 600,
+                  fontSize: '0.9rem',
+                  cursor: 'pointer',
+                  transition: 'all 0.2s ease'
+                }}
+                onMouseEnter={e => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.color = '#141D42';
+                }}
+                onMouseLeave={e => {
+                  e.currentTarget.style.background = 'transparent';
+                  e.currentTarget.style.color = 'white';
+                }}
+              >
+                Suggest a Location
+              </button>
+            </motion.div>
           </AnimatePresence>
         </div>
       </div>
