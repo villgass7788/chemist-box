@@ -591,8 +591,8 @@ export default function HomePage() {
 
             <div className={styles.impactStats}>
               {[
-                { num: '100+', label: 'Pharmacy Locations', desc: 'Across Tier-1 and Tier-2 cities' },
-                { num: '1.0M+', label: 'Patients Served', desc: 'Families who rely on Chemist Box' },
+                { num: '15+', label: 'Pharmacy Locations', desc: 'Across every locales, nearby you' },
+                { num: '100K+', label: 'Patients Served', desc: 'Families who rely on Chemist Box' },
                 { num: '250+', label: 'Pharmacists Employed', desc: 'Trained healthcare professionals' },
                 { num: '100%', label: 'Genuine Products', desc: 'Zero-tolerance on substandard medicines' },
               ].map((s, i) => (
