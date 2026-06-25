@@ -1621,10 +1621,28 @@
   .heroVisual {
     display: block;
     width: 100%;
-    opacity: 0.45;
+    opacity: 1;
     z-index: 0;
+    /* Remove desktop left-fade mask on mobile */
+    -webkit-mask-image: none;
+    mask-image: none;
   }
-  
+
+  /* Shift image crop downward on mobile — no scale to avoid side gaps */
+  .heroVisual img {
+    object-position: center 75% !important;
+  }
+
+  /* Mobile overlay: solid navy top half → fades to 70% navy at bottom */
+  .heroFadeMask {
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 29, 66, 1)   0%,
+      rgba(20, 29, 66, 1)  50%,
+      rgba(20, 29, 66, 0.7) 100%
+    );
+  }
+
   .heroVisualSpacer {
     display: none;
   }
